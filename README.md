@@ -1,24 +1,39 @@
-# README
+# Sample Rails App with PostgreSQL
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a sample app
 
-Things you may want to cover:
+## Version
+- ruby 3.1.2
+- Rails 7.0.3.1
 
-* Ruby version
+## Setup Instructions
 
-* System dependencies
+- Create New App:
+```sh
+rails new powerpost --database=postgresql
+```
 
-* Configuration
+- Stop/Start PostgreSQL:
+```sh
+sudo service postgresql stop
+sudo service postgresql start
+sudo service postgresql status
+```
 
-* Database creation
+- Add User/Role and Database. The name must be the same as your username in Ubuntu.
+```sh
+sudo -u postgres createuser -s dipen -P
+sudo -u postgres createdb dipen
+```
+-s = Add the superuser privilege<br>
+-P = Password creation prompt
 
-* Database initialization
+- Create DB
+```sh
+rails db:create
+```
 
-* How to run the test suite
+## References
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Youtube: https://www.youtube.com/watch?v=5QUTfcO7BEw
+- Install PostgreSQL: https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart
