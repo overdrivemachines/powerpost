@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: powerpost_production
-  username: powerpost
-  password: <%= ENV["POWERPOST_DATABASE_PASSWORD"] %>
+  username: deploy
+  password: <%= Rails.application.credentials.dig(:prod_db_password) %>
